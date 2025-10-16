@@ -14,20 +14,21 @@ Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei num
 //creare un bottone per inviare il risultato
 
 const timerEl = document.getElementById("timer");
-console.log(timerEl);
-
+const startEl = document.getElementById("start");
 const randomEl = document.querySelector("#random_list");
 
 const pc_number = [];
 
-for (let i = 0; i < 5; i++) {
-  const numero_casuale = Math.floor(Math.random() * 100) + 1;
-  pc_number.push(numero_casuale);
-  //CREO 5 NUMERI E GLI METTO DENTRO L'ARRAY
+startEl.addEventListener("click", function () {
+  for (let i = 0; i < 5; i++) {
+    const numero_casuale = Math.floor(Math.random() * 100) + 1;
+    pc_number.push(numero_casuale);
+    //CREO 5 NUMERI E GLI METTO DENTRO L'ARRAY
 
-  //AGGIUNGO I 5 NUMERI ALL'HTML
-  const li = document.createElement("li");
-  li.innerText = numero_casuale;
-  randomEl.appendChild(li);
-}
-console.log(pc_number);
+    //AGGIUNGO I 5 NUMERI ALL'HTML
+    const li = document.createElement("li");
+    li.innerText = numero_casuale;
+    randomEl.appendChild(li);
+  }
+  console.log(pc_number);
+});
