@@ -18,35 +18,11 @@ console.log(timerEl);
 
 const randomEl = document.querySelector("#random_list");
 
-const pc_number = [0];
+const pc_number = [];
 
 for (let i = 0; i < 5; i++) {
   const numero_casuale = Math.floor(Math.random() * 100) + 1;
   pc_number.push(numero_casuale);
-  randomEl.appendChild(li);
-  console.log(pc_number);
+  //CREO 5 NUMERI E GLI METTO DENTRO L'ARRAY
 }
-
-/*
-
-let countdown = 30;
-console.log(countdown);
-
-
-timerEl.innerHTML = countdown;
-
-const clock = setInterval(() => {
-
-
-  if (countdown === 0) {
-    clearInterval(clock);
-    console.log("fermare il countdown");
-
-    timerEl.innerHTML = "auguriiii";
-  } else {
-    timerEl.innerHTML = countdown;
-    console.log("mostro il valore che scende");
-  }
-  countdown--;
-},);
- */
+console.log(pc_number);
