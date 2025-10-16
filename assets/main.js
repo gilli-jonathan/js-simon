@@ -115,13 +115,14 @@ risultatoEl.addEventListener("click", function () {
   const esitoEl = document.getElementById("esito");
 
   if (bingo.length === 0) {
-    esitoEl.innerHTML = "<h2>hai fallito</h2>";
+    esitoEl.innerHTML =
+      "<h2>hai fallito, nemmeno un numero p.s. non piaci nemmeno a tua mamma</h2>";
   } else if (bingo.length === 1) {
     esitoEl.innerHTML = `<h2>Mi dispiace hai indovinato solo il numero ${bingo}</h2>`;
   } else if (bingo.length === 2) {
-    esitoEl.innerHTML = `<h2>Sei riuscito a indovinare i numeri ${bingo}</h2>`;
+    esitoEl.innerHTML = `<h2>Non male, sei riuscito a indovinare i numeri: ${bingo}</h2>`;
   } else if (bingo.length === 3) {
-    esitoEl.innerHTML = `<h2>Grande hai indovinato 3 numeri che sono, ${bingo}</h2>`;
+    esitoEl.innerHTML = `<h2>Grande hai indovinato 3numeri che sono, ${bingo}</h2>, la prossima voltà andrà meglio`;
   } else if (bingo.length === 4) {
     esitoEl.innerHTML = `<h2>Per poco! hai beccato i numeri ${bingo}, ben 4 su 5 ;-) </h2>`;
   } else {
