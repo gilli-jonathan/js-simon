@@ -9,9 +9,9 @@
     <title>simon smemorato</title>
 </head>
 
-<body>
+<body class="container">
 
-    <div id="top_card" class="container text-center">
+    <header>
         <h1>Pronto a mettere alla prova la tua memoria??</h1>
         <p>Quando schiaccierai il pulsante appariranno 5 numeri casuali e dopo 30 secondi spariranno per sempre... sei
             pronto per mettere alla prova la tua memoria? riuscirai a ricordare tutti i numeri? riuscirò ad arrivare
@@ -20,16 +20,20 @@
         <br>
         <hr>
         <br>
+
+    </header>
+
+    <div id="top_card" class="my-3">
+
         <button id="start" class="my-3">iniziamo a giocare!</button>
         <span id="timer"></span>
-
+        <h2>Ecco i numeri da ricordare:</h2>
         <ul id="random_list">
-            <h2>Ecco i numeri da ricordare:</h2>
         </ul>
 
     </div>
 
-    <div id="user_input" class="container text-center d-none">
+    <div id="user_input" class="d-none">
 
         <p>metti i numeri che ti ricordi e scopri quanto e buona la tua memoria</p>
 
@@ -40,7 +44,7 @@
         <select class="risposta" id="scelta_5"></select>
         <br>
         <br>
-        <button id="risultato">scopri come sei andato</button>
+        <button id="risultato" class="my-">scopri come sei andato</button>
         <div id="esito">
         </div>
     </div>

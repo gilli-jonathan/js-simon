@@ -44,22 +44,24 @@ startEl.addEventListener("click", function () {
   console.log(pc_number);
 
   //creazione del timer
-  let countdown = 2;
-  console.log(countdown);
+  let countdown = 5;
 
-  timerEl.innerHTML = countdown;
   const clock = setInterval(() => {
     if (countdown === 0) {
       clearInterval(clock);
-      console.log("fermare il countdown");
       randomEl.innerHTML = "<h2>Ecco i numeri da ricordare:</h2>";
       timerEl.innerHTML = " Tempo finito!";
     } else {
       timerEl.innerHTML = countdown;
-      console.log("mostro il valore che scende");
     }
     countdown--;
-  }, 2000);
+
+    const card_topEl = document.getElementById("top_card");
+    card_topEl.classList.add("d-none");
+
+    const user_inputEl = document.getElementById("user_input");
+    user_inputEl.classList.remove("d-none");
+  }, 5000);
 });
 
 //CREO I NUMERI DA METTERE DENTRO OPTION NEL SELECT
