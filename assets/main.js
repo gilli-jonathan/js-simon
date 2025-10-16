@@ -24,5 +24,10 @@ for (let i = 0; i < 5; i++) {
   const numero_casuale = Math.floor(Math.random() * 100) + 1;
   pc_number.push(numero_casuale);
   //CREO 5 NUMERI E GLI METTO DENTRO L'ARRAY
+
+  //AGGIUNGO I 5 NUMERI ALL'HTML
+  const li = document.createElement("li");
+  li.innerText = numero_casuale;
+  randomEl.appendChild(li);
 }
 console.log(pc_number);
