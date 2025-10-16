@@ -13,6 +13,17 @@ Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei num
 //allo scadere del timer appaiono 5 input per inserire i numeri
 //creare un bottone per inviare il risultato
 
+//funzione per confrontare i due array
+function confronto(array1, array2) {
+  for (let i = 0; i < 5; i++) {
+    for (let j = 0; j < 5; j++) {
+      if (array1[i] == array2[j]) {
+        bingo.push(array2[j]);
+      }
+    }
+  }
+}
+
 const timerEl = document.getElementById("timer");
 const startEl = document.getElementById("start");
 const randomEl = document.querySelector("#random_list");
@@ -33,7 +44,7 @@ startEl.addEventListener("click", function () {
   console.log(pc_number);
 
   //creazione del timer
-  let countdown = 4;
+  let countdown = 2;
   console.log(countdown);
 
   timerEl.innerHTML = countdown;
@@ -48,7 +59,7 @@ startEl.addEventListener("click", function () {
       console.log("mostro il valore che scende");
     }
     countdown--;
-  }, 400);
+  }, 2000);
 });
 
 //CREO I NUMERI DA METTERE DENTRO OPTION NEL SELECT
@@ -73,3 +84,29 @@ user_option.forEach((select_element) => {
 });
 
 console.log(user_option);
+
+//RACCOLGO I NUMERI SCELTI IN UN ARRAY CHE USERO' PER FARE UN CONFRONTO
+//PER RACCOGLIERE I NUMERI MI AFFIDO AL CLICK DEL 2 BOTTONE
+
+const bingo = [];
+const numeri_scelti = [];
+const risultatoEl = document.getElementById("risultato");
+
+risultatoEl.addEventListener("click", function () {
+  const scelta_1 = document.getElementById("scelta_1");
+  const scelta_2 = document.getElementById("scelta_2");
+  const scelta_3 = document.getElementById("scelta_3");
+  const scelta_4 = document.getElementById("scelta_4");
+  const scelta_5 = document.getElementById("scelta_5");
+
+  numeri_scelti.push(scelta_1.value);
+  numeri_scelti.push(scelta_2.value);
+  numeri_scelti.push(scelta_3.value);
+  numeri_scelti.push(scelta_4.value);
+  numeri_scelti.push(scelta_5.value);
+
+  console.log(numeri_scelti);
+
+  confronto(pc_number, numeri_scelti);
+  console.log(bingo);
+});
