@@ -23,7 +23,7 @@ startEl.addEventListener("click", function () {
   for (let i = 0; i < 5; i++) {
     const numero_casuale = Math.floor(Math.random() * 100) + 1;
     pc_number.push(numero_casuale);
-    //CREO 5 NUMERI E GLI METTO DENTRO L'ARRAY
+    //CREO 5 NUMERI E LI METTO DENTRO L'ARRAY
 
     //AGGIUNGO I 5 NUMERI ALL'HTML
     const li = document.createElement("li");
@@ -31,4 +31,45 @@ startEl.addEventListener("click", function () {
     randomEl.appendChild(li);
   }
   console.log(pc_number);
+
+  //creazione del timer
+  let countdown = 4;
+  console.log(countdown);
+
+  timerEl.innerHTML = countdown;
+  const clock = setInterval(() => {
+    if (countdown === 0) {
+      clearInterval(clock);
+      console.log("fermare il countdown");
+      randomEl.innerHTML = "<h2>Ecco i numeri da ricordare:</h2>";
+      timerEl.innerHTML = " Tempo finito!";
+    } else {
+      timerEl.innerHTML = countdown;
+      console.log("mostro il valore che scende");
+    }
+    countdown--;
+  }, 400);
 });
+
+//CREO I NUMERI DA METTERE DENTRO OPTION NEL SELECT
+//PER CREARE TUTTE LE OPTION USO UN CICLO FOR SIMILMENTE A QUANTO FATTO PRIMA PER CREARE I <li></li>
+
+function numeri_option(select_element, min, max) {
+  for (let i = min; i < max; i++) {
+    const option = document.createElement("option");
+    option.value = i;
+    option.textContent = i;
+    select_element.appendChild(option);
+  }
+}
+
+//PORTO UN NODO RELATIVO A TUTTE LE OPTION SU JS
+const user_option = document.querySelectorAll(".risposta");
+
+//USO LA FUNZIONE PER CREARE IL NUMERO DI RISPOSTE CHE POI L'UTENTE DOVRA' DARE
+
+user_option.forEach((select_element) => {
+  numeri_option(select_element, 1, 100);
+});
+
+console.log(user_option);

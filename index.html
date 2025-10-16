@@ -9,20 +9,39 @@
 
 <body>
 
-    <h1>Pronto a mettere alla prova la tua memoria??</h1>
-    <p>Quando schiaccierai il pulsante appariranno 5 numeri casuali e dopo 30 secondi spariranno per sempre... sei
-        pronto per mettere alla prova la tua memoria? riuscirai a ricordare tutti i numeri? riuscirò ad arrivare alla
-        fine del corso senza togliermi la vita?? Cosa aspetti schiaccia quel bottone e INIZIAMOOO :)</p>
-    <br>
-    <hr>
-    <br>
-    <button>iniziamo a giocare!</button>
-    <span id="timer"></span>
+    <div id="top_card">
+        <h1>Pronto a mettere alla prova la tua memoria??</h1>
+        <p>Quando schiaccierai il pulsante appariranno 5 numeri casuali e dopo 30 secondi spariranno per sempre... sei
+            pronto per mettere alla prova la tua memoria? riuscirai a ricordare tutti i numeri? riuscirò ad arrivare
+            alla
+            fine del corso senza togliermi la vita?? Cosa aspetti schiaccia quel bottone e INIZIAMOOO :)</p>
+        <br>
+        <hr>
+        <br>
+        <button id="start">iniziamo a giocare!</button>
+        <span id="timer"></span>
 
-    <ul id="random_list">
-        <h2>Ecco i numeri da ricordare:</h2>
+        <ul id="random_list">
+            <h2>Ecco i numeri da ricordare:</h2>
 
-    </ul>
+        </ul>
+
+    </div>
+
+    <div id="user_input">
+
+        <p>metti i numeri che ti ricordi e scopri quanto e buona la tua memoria</p>
+
+        <select class="risposta" id="scelta_1"></select>
+        <select class="risposta" id="scelta_2"></select>
+        <select class="risposta" id="scelta_3"></select>
+        <select class="risposta" id="scelta_4"></select>
+        <select class="risposta" id="scelta_5"></select>
+        <br>
+        <br>
+        <button>scopri come sei andato</button>
+    </div>
+
 
 
     <script src="./assets/main.js"></script>
