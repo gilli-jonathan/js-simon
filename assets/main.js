@@ -44,24 +44,26 @@ startEl.addEventListener("click", function () {
   console.log(pc_number);
 
   //creazione del timer
-  let countdown = 5;
+  let countdown = 10;
+  console.log(countdown);
+  timerEl.innerHTML = countdown;
 
   const clock = setInterval(() => {
-    if (countdown === 0) {
+    timerEl.innerHTML = countdown;
+    countdown--;
+
+    if (countdown < 0) {
       clearInterval(clock);
       randomEl.innerHTML = "<h2>Ecco i numeri da ricordare:</h2>";
       timerEl.innerHTML = " Tempo finito!";
-    } else {
-      timerEl.innerHTML = countdown;
+
+      const card_topEl = document.getElementById("top_card");
+      card_topEl.classList.add("d-none");
+
+      const user_inputEl = document.getElementById("user_input");
+      user_inputEl.classList.remove("d-none");
     }
-    countdown--;
-
-    const card_topEl = document.getElementById("top_card");
-    card_topEl.classList.add("d-none");
-
-    const user_inputEl = document.getElementById("user_input");
-    user_inputEl.classList.remove("d-none");
-  }, 5000);
+  }, 1000);
 });
 
 //CREO I NUMERI DA METTERE DENTRO OPTION NEL SELECT
@@ -122,7 +124,7 @@ risultatoEl.addEventListener("click", function () {
   } else if (bingo.length === 2) {
     esitoEl.innerHTML = `<h2>Non male, sei riuscito a indovinare i numeri: ${bingo}</h2>`;
   } else if (bingo.length === 3) {
-    esitoEl.innerHTML = `<h2>Grande hai indovinato 3numeri che sono, ${bingo}</h2>, la prossima voltà andrà meglio`;
+    esitoEl.innerHTML = `<h2>Grande hai indovinato 3 numeri che sono ${bingo} la prossima volta andrà meglio</h2>`;
   } else if (bingo.length === 4) {
     esitoEl.innerHTML = `<h2>Per poco! hai beccato i numeri ${bingo}, ben 4 su 5 ;-) </h2>`;
   } else {
